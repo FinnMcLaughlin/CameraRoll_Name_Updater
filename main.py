@@ -3,9 +3,6 @@ from pip._internal import main
 from PIL import Image
 from easygui import diropenbox
 
-# path = "C:/Users/user/Pictures/Camera Roll/temp"
-# path = "C:/Users/user/Documents/Budget 2018/San Francisco 2018"
-
 fileNamePretext = "_DSC"
 
 
