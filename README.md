@@ -1,0 +1,2 @@
+# CameraRoll_Name_Updater
+After backing up the images from camera's SD card to laptop, and then clearing camera's SD card to make room for future pictures, the title of the new images would reset, causing duplicate names when newer images were transferred to the laptop (_DSC001 , _DSC001(1)) and causing an unordered collection. This program was created to sort the images based on datetime metadata of each image in a selected folder.
