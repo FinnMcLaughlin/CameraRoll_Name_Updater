@@ -1,9 +1,10 @@
 import os
 from pip._internal import main
 from PIL import Image
+from easygui import diropenbox
 
-path = "C:/Users/user/Pictures/Camera Roll/temp"
-#path = "C:/Users/user/Documents/Budget 2018/San Francisco 2018"
+# path = "C:/Users/user/Pictures/Camera Roll/temp"
+# path = "C:/Users/user/Documents/Budget 2018/San Francisco 2018"
 
 fileNamePretext = "_DSC"
 
@@ -21,6 +22,7 @@ def updateCount(count):
 def getAllImagesAndDateTime():
     # Function that creates the list of tuples based on each filename in the specified folder
     # And gets the datetime from each images metadata
+
     images = list()
     NoneType = type(None)
 
@@ -38,6 +40,7 @@ def getAllImagesAndDateTime():
 
 def sortImages(images):
     # Function that sorts the list of tuples based on the datetime value
+
     images.sort(key=lambda x: x[1])
     return images
 
@@ -45,6 +48,7 @@ def sortImages(images):
 def tempRename(images):
     # Function that temporarily changes each image name by adding a '__' in front of each
     # This is done to prevent any accidental duplicate names clashing during the process
+
     for image in images:
         image_name = image[0]
         image_path = os.path.join(path, image_name)
@@ -55,6 +59,7 @@ def tempRename(images):
 
 def updateImageName(images):
     # Function that updates the name of each image, so that they are listed in order of the datetime
+
     count = 1
     for image in images:
         image_name = image[0]
@@ -64,7 +69,7 @@ def updateImageName(images):
         os.rename(image_path, new_image_path)
         count += 1
 
-# main(["install", "Pillow"])
+# main(["install", "easygui"])
 
 # Main
 # Gets all images from a specified folder, and their datetime
@@ -72,6 +77,7 @@ def updateImageName(images):
 # The sorted images are renamed with a temporary name, to prevent any duplicate names during the process
 # The sorted images are finally renamed with their correct name format (_DSC####) based on their datetime
 
+path = diropenbox()
 all_pictures = getAllImagesAndDateTime()
 
 if len(all_pictures) > 0:
